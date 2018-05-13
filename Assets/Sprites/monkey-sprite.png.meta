@@ -58,7 +58,7 @@ TextureImporter:
     21300106: monkey-throw-1
     21300108: monkey-throw-2
     21300110: monkey-walk-1
-    21300112: monkey-walk2
+    21300112: monkey-walk-2
     21300114: monkey-walk-3
     21300116: monkey-walk-4
     21300118: monkey-walk-away-1
@@ -666,7 +666,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: monkey-walk2
+      name: monkey-walk-2
       rect:
         serializedVersion: 2
         x: 1120
