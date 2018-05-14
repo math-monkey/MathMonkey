@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 8
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -39,7 +39,6 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
-  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -55,10 +54,11 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
-    m_AtlasSize: 1024
+    m_TextureWidth: 1024
+    m_TextureHeight: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -135,7 +135,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 33036200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 418927129}
@@ -383,7 +383,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 624703732}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 40}
+  m_LocalPosition: {x: 4.72, y: 1.66, z: 40}
   m_LocalScale: {x: 0.20740163, y: 0.20740168, z: 2.0740168}
   m_Children:
   - {fileID: 1910645188}
@@ -545,7 +545,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1119989071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -593,7 +593,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -749,7 +748,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1797492110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 47402741}
@@ -826,7 +825,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -871,7 +869,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4022858757587554, guid: ddb55bdb8ec3243cd939f996269ff4ca, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.53
+      value: -2.84
       objectReference: {fileID: 0}
     - target: {fileID: 4022858757587554, guid: ddb55bdb8ec3243cd939f996269ff4ca, type: 2}
       propertyPath: m_LocalPosition.z
@@ -896,6 +894,31 @@ Prefab:
     - target: {fileID: 4022858757587554, guid: ddb55bdb8ec3243cd939f996269ff4ca, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 70040631077951860, guid: ddb55bdb8ec3243cd939f996269ff4ca,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: b1c8c1cce861647a3b692c2a0233b917, type: 2}
+    - target: {fileID: 70040631077951860, guid: ddb55bdb8ec3243cd939f996269ff4ca,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.023433534
+      objectReference: {fileID: 0}
+    - target: {fileID: 70040631077951860, guid: ddb55bdb8ec3243cd939f996269ff4ca,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 3.0910742
+      objectReference: {fileID: 0}
+    - target: {fileID: 70040631077951860, guid: ddb55bdb8ec3243cd939f996269ff4ca,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.12274052
+      objectReference: {fileID: 0}
+    - target: {fileID: 70040631077951860, guid: ddb55bdb8ec3243cd939f996269ff4ca,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1.8824883
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ddb55bdb8ec3243cd939f996269ff4ca, type: 2}
