@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 	bool facingRight;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		myRB = GetComponent<Rigidbody2D>();
 		myAnim = GetComponent<Animator>();
 		facingRight = true;
@@ -28,25 +28,25 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-    void Update () {
-		if(grounded && Input.GetAxis("Jump") > 0) {
+	void Update() {
+		if (grounded && Input.GetAxis("Jump") > 0) {
 			grounded = false;
 			myAnim.SetBool("isGrounded", grounded);
 			myRB.AddForce(new Vector2(0, jumpHeight));
 		}
-    }
-    
-    void FixedUpdate () {
+	}
+
+	void FixedUpdate() {
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 		myAnim.SetBool("isGrounded", grounded);
 
 		myAnim.SetFloat("verticalSpeed", myRB.velocity.y);
 
 		float move = Input.GetAxis("Horizontal");
-        myRB.velocity = new Vector2(move * maxSpeed, myRB.velocity.y);
-		myAnim.SetFloat("speed", Mathf.Abs(move)); 
+		myRB.velocity = new Vector2(move * maxSpeed, myRB.velocity.y);
+		myAnim.SetFloat("speed", Mathf.Abs(move));
 
-		if(move>0 && !facingRight || move<0 && facingRight) {
+		if (move > 0 && !facingRight || move < 0 && facingRight) {
 			Flip();
 		}
 	}
