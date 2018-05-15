@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 	float groundCheckRadius = 0.2f;
 	public LayerMask groundLayer;
 	public Transform groundCheck;
-	public float jumpHeight;
+	public float jumpHeight = 15f;
 
 
 	Rigidbody2D myRB;
@@ -29,10 +29,10 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		if (grounded && Input.GetAxis("Jump") > 0) {
+		if (grounded && Input.GetButtonDown("Jump")) {
 			grounded = false;
 			myAnim.SetBool("isGrounded", grounded);
-			myRB.AddForce(new Vector2(0, jumpHeight));
+			myRB.velocity = Vector2.up * jumpHeight;
 		}
 	}
 
