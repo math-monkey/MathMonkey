@@ -11,7 +11,8 @@ public class ProjectileController : MonoBehaviour {
 
 	void Awake() {
 		rb = GetComponent<Rigidbody2D>();
-		rb.AddForce(new Vector2(1, 0) * projectileSpeed, ForceMode2D.Impulse);
+		var direction = transform.localRotation.z.Equals(0) ? Vector2.right : Vector2.left;
+		rb.AddForce(direction * projectileSpeed, ForceMode2D.Impulse);
 	}
 
 	// Update is called once per frame
