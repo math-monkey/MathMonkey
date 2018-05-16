@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4736407774136292}
   - component: {fileID: 212878399032331268}
   - component: {fileID: 60532093765347882}
+  - component: {fileID: 114472448539953522}
   m_Layer: 0
   m_Name: banana
   m_TagString: Untagged
@@ -40,7 +41,7 @@ GameObject:
   - component: {fileID: 114036048381091318}
   - component: {fileID: 114596010512694528}
   m_Layer: 0
-  m_Name: projectile
+  m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +150,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   degsBySec: 1080
-  projectileSpeed: 20
+  bulletSpeed: 20
+--- !u!114 &114472448539953522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1108598163204900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4cac06e702541798a083c54b419820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletDamage: 0
+  explosionEffect: {fileID: 1599104291823534, guid: 69f1479ea0b534576ba5ac5f7b480a7b,
+    type: 2}
 --- !u!114 &114596010512694528
 MonoBehaviour:
   m_ObjectHideFlags: 1
