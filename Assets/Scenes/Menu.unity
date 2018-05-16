@@ -206,7 +206,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &163099008 stripped
 Transform:
@@ -414,29 +414,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &350135619 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1947232859901542, guid: ddb55bdb8ec3243cd939f996269ff4ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 534190813}
---- !u!95 &350135620
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 350135619}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a397c476decd2431499ec67fe1ee598f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &372812014
 Prefab:
   m_ObjectHideFlags: 0
@@ -594,9 +571,24 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4897754536737342, guid: ddb55bdb8ec3243cd939f996269ff4ca, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114300729653937532, guid: ddb55bdb8ec3243cd939f996269ff4ca,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95910603610455674, guid: ddb55bdb8ec3243cd939f996269ff4ca,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a397c476decd2431499ec67fe1ee598f, type: 2}
     m_RemovedComponents:
     - {fileID: 95026073169382336, guid: ddb55bdb8ec3243cd939f996269ff4ca, type: 2}
     - {fileID: 114056905653626448, guid: ddb55bdb8ec3243cd939f996269ff4ca, type: 2}
+    - {fileID: 114300729653937532, guid: ddb55bdb8ec3243cd939f996269ff4ca, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ddb55bdb8ec3243cd939f996269ff4ca, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &540542957
@@ -943,8 +935,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.17870244, g: 0.1792453, b: 0.15294118, a: 0.13725491}
-    m_PressedColor: {r: 0.18039216, g: 0.18039216, b: 0.15294118, a: 0.1764706}
+    m_HighlightedColor: {r: 0.59607846, g: 0.40392157, b: 0.15294118, a: 0.5686275}
+    m_PressedColor: {r: 0.59607846, g: 0.40392157, b: 0.15294118, a: 0.6666667}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1330,8 +1322,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.17870244, g: 0.1792453, b: 0.15294118, a: 0.13725491}
-    m_PressedColor: {r: 0.18039216, g: 0.18039216, b: 0.15294118, a: 0.1764706}
+    m_HighlightedColor: {r: 0.5943396, g: 0.40561682, b: 0.1541919, a: 0.5686275}
+    m_PressedColor: {r: 0.59607846, g: 0.40392157, b: 0.15294118, a: 0.6666667}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1631,7 +1623,7 @@ RectTransform:
   - {fileID: 782659952}
   - {fileID: 2087292567}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1695,8 +1687,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.17870244, g: 0.1792453, b: 0.15294118, a: 0.13725491}
-    m_PressedColor: {r: 0.18039216, g: 0.18039216, b: 0.15294118, a: 0.1764706}
+    m_HighlightedColor: {r: 0.59607846, g: 0.40392157, b: 0.15294118, a: 0.5686275}
+    m_PressedColor: {r: 0.59607846, g: 0.40392157, b: 0.15294118, a: 0.6666667}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
