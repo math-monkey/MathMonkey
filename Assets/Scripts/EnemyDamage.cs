@@ -6,7 +6,6 @@ public class EnemyDamage : MonoBehaviour {
 
 	public float damage;
 	public float damageRate;
-	public float pushBackForce;
     
 	float nextDamage;
 
@@ -26,15 +25,7 @@ public class EnemyDamage : MonoBehaviour {
 			playerHealth.AddDamage(damage);
 			nextDamage = Time.time + damageRate;
 
-			PushBack(other.transform);
+			playerHealth.PushBack();
 		}
-	} 
-
-	void PushBack(Transform pushedObject) {
-		Vector2 pushDirection = new Vector2(0,pushedObject.position.y - transform.position.y).normalized;
-		pushDirection *= pushBackForce;
-		Rigidbody2D pushRB = pushedObject.gameObject.GetComponent<Rigidbody2D>();
-		pushRB.velocity = Vector2.zero;
-		pushRB.AddForce(pushDirection, ForceMode2D.Impulse); 
 	}
 }
