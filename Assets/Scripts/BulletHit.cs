@@ -13,11 +13,6 @@ public class BulletHit : MonoBehaviour {
 		bc = GetComponentInParent<BulletController>();
 	}
 
-	// Update is called once per frame
-	void Update() {
-
-	}
-
 	void OnTriggerEnter2D(Collider2D other) {
 		HitShootable(other);
 	}
@@ -31,6 +26,11 @@ public class BulletHit : MonoBehaviour {
 			bc.RemoveForce();
 			Instantiate(explosionEffect, transform.position, transform.rotation);
 			Destroy(gameObject);
+
+			if (other.tag == "Enemy") {
+				EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
+				enemyHealth.AddDamage(bulletDamage);
+			}
 		}
 	}
 }
