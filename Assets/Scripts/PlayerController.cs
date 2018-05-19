@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class PlayerController : MonoBehaviour {
 
@@ -13,7 +14,6 @@ public class PlayerController : MonoBehaviour {
 	public LayerMask groundLayer;
 	public Transform groundCheck;
 	public float jumpHeight = 15f;
-
 
 	Rigidbody2D myRB;
 	Animator myAnim;
@@ -42,8 +42,12 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		// Player shooting
-		if (Input.GetAxisRaw("Fire1") > 0) {
-			throwBullet();
+		if (Input.GetButtonDown("Fire1")) {
+			throwBullet(BulletController.BulletType.EVEN);
+		} else if (Input.GetButtonDown("Fire2")) {
+			throwBullet(BulletController.BulletType.DIVISIBLE_3);
+		} else if (Input.GetButtonDown("Fire3")) {
+			throwBullet(BulletController.BulletType.PRIME);
 		}
 	}
 
@@ -69,11 +73,15 @@ public class PlayerController : MonoBehaviour {
 		transform.localScale = theScale;
 	}
 
-	void throwBullet() {
+	void throwBullet(BulletController.BulletType type) {
 		var now = Time.time;
 		if (now > nextFire) {
 			nextFire = now + fireRate;
+
 			var direction = facingRight ? Vector3.zero : Vector3.back;
+			var banana = bullet.transform.Find("banana");
+			var bc = bullet.GetComponent<BulletController>();
+			banana.GetComponent<SpriteRenderer>().sprite = bc.GetSprite(type);
 			Instantiate(bullet, bulletSpawn.position, Quaternion.Euler(direction));
 		}
 	}

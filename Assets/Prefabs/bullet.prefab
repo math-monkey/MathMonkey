@@ -111,7 +111,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 5.17, y: 3.7}
-    newSize: {x: 6.35, y: 4.92}
+    newSize: {x: 5.17, y: 3.7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -151,6 +151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   degsBySec: 1080
   bulletSpeed: 20
+  spEven: {fileID: 21300000, guid: ac9078810d1754a08b1c30eb933270cb, type: 3}
+  spDiv3: {fileID: 21300000, guid: ab383bff4dd684796ae2135a3c58c2d5, type: 3}
+  spPrime: {fileID: 21300000, guid: 5b59eba58c54c4129812e29a3eb0da5e, type: 3}
 --- !u!114 &114472448539953522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -211,13 +214,13 @@ SpriteRenderer:
   m_SortingLayerID: 131647143
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a96a7b432d0ce4543900d8c94774e02f, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.35, y: 4.92}
+  m_Size: {x: 5.17, y: 3.7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
