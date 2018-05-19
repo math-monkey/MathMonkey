@@ -18,7 +18,7 @@ public class Cleaner : MonoBehaviour {
 		if(other.tag == "Player") {
 			PlayerHealth playerFell = other.GetComponent<PlayerHealth>();
 			playerFell.pushBackForce = 35f;
-            playerFell.MakeDead();
+			playerFell.Death();
 		}
 	}
 }

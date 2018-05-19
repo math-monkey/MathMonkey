@@ -41,7 +41,7 @@ public class PlayerHealth : MonoBehaviour {
 		healthSlider.value = currentHealth;
 
 		if(currentHealth <= 0) {
-			MakeDead();
+			Death();
 		}
 	}
     
@@ -52,13 +52,18 @@ public class PlayerHealth : MonoBehaviour {
         pushRB.velocity = Vector2.zero;
         pushRB.AddForce(pushDirection, ForceMode2D.Impulse);
     }
-   
-	public void MakeDead() {
+
+	public void Death() {
+		StartCoroutine("MakeDead");
+	}
+
+     IEnumerator MakeDead() {
 		PushBack();
 		healthSlider.gameObject.SetActive(false);
 		capsuleCollider.enabled = false;
 		controlMovement.enabled = false;
         myAnim.SetTrigger("Die");
-		Destroy(gameObject, 1.5f);
+		yield return new WaitForSeconds(1.5f);
+		SceneManager.LoadScene("Main");
 	}
 }
