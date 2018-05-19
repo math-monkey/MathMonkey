@@ -8,8 +8,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	public float fullHealth;
 	public float pushBackForce;
-
-	//bool isDead;
+    
 	float currentHealth;
 	PlayerController controlMovement;
 	Animator myAnim;
@@ -20,7 +19,6 @@ public class PlayerHealth : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-		//isDead = false;
 		currentHealth = fullHealth;
 		controlMovement = GetComponent<PlayerController>();
 		myAnim = controlMovement.GetComponent<Animator>();
@@ -55,7 +53,7 @@ public class PlayerHealth : MonoBehaviour {
         pushRB.AddForce(pushDirection, ForceMode2D.Impulse);
     }
    
-	void MakeDead() {
+	public void MakeDead() {
 		PushBack();
 		healthSlider.gameObject.SetActive(false);
 		capsuleCollider.enabled = false;
