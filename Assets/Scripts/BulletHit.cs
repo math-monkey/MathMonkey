@@ -29,7 +29,7 @@ public class BulletHit : MonoBehaviour {
 
 			if (other.tag == "Enemy") {
 				EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
-				enemyHealth.AddDamage(bulletDamage);
+				enemyHealth.AddDamage(bulletDamage, bc.bulletType);
 			}
 		}
 	}
