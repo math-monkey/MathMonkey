@@ -8,6 +8,13 @@ public class PlayerHealth : MonoBehaviour {
 
 	public float fullHealth;
 	public float pushBackForce;
+	public Image playerLife1;
+    public Image playerLife2;
+    public Image playerLife3;
+    public RectTransform numPlayerLives;
+
+	static int lives;
+	static int countLives;
     
 	float currentHealth;
 	PlayerController controlMovement;
@@ -27,6 +34,14 @@ public class PlayerHealth : MonoBehaviour {
 		//HUD Initialization
 		healthSlider.maxValue = fullHealth;
 		healthSlider.value = fullHealth;
+
+		if (lives == 0) {
+			PlayerHealth.lives = 3;	
+		}
+       
+		if(PlayerHealth.countLives != 0) {
+		    checkLife();	
+		}
 	}
 	
 	// Update is called once per frame
@@ -53,11 +68,33 @@ public class PlayerHealth : MonoBehaviour {
         pushRB.AddForce(pushDirection, ForceMode2D.Impulse);
     }
 
+	void checkLife() {
+		if(PlayerHealth.lives == 2) {
+			removeLife(playerLife3);
+		} else if(PlayerHealth.lives == 1) {
+			removeLife(playerLife3);
+			removeLife(playerLife2);
+		} else if (PlayerHealth.lives == 0) {
+			//gameOver();
+		}
+	}
+
+	void removeLife(Image playerLifeImg) {
+        playerLifeImg.enabled = false;
+        float difference = healthSlider.transform.position.x - playerLifeImg.transform.position.x;
+        Vector3 temp = healthSlider.transform.position; // copy to an auxiliary variable...
+        temp.x = healthSlider.transform.position.x - difference + 5; // modify the component you want in the variable...
+        healthSlider.transform.position = temp;
+    }
+
 	public void Death() {
 		StartCoroutine("MakeDead");
 	}
-
+    
      IEnumerator MakeDead() {
+		PlayerHealth.countLives++;
+        PlayerHealth.lives--;
+		Debug.Log(PlayerHealth.lives);
 		PushBack();
 		healthSlider.gameObject.SetActive(false);
 		capsuleCollider.enabled = false;
