@@ -7,9 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour {
     
     //player life
-    public Image playerLife1;
-    public Image playerLife2;
-    public Image playerLife3;
+	public Image[] playerLives;
 	public RectTransform playerUI;
 	public RectTransform gameOverUI;
     public Slider healthSlider;
@@ -30,11 +28,11 @@ public class PlayerLife : MonoBehaviour {
     }
     
 	public void checkLife() {
-        if (PlayerLife.lives == 2) {
-            removeLife(playerLife3);
-        } else if (PlayerLife.lives == 1) {
-            removeLife(playerLife3);
-            removeLife(playerLife2);
+		if (PlayerLife.lives == 2 && playerLives.Length >= 2) {
+			removeLife(playerLives[2]);
+		} else if (PlayerLife.lives == 1 && playerLives.Length >= 1) {
+			removeLife(playerLives[2]);
+            removeLife(playerLives[1]);
         }else if (PlayerLife.lives == 0) {
             gameOver();
         }

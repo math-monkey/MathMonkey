@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 4110708617048182}
   - component: {fileID: 61768407777685384}
   - component: {fileID: 114662766772793328}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: madFlowerSurface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,6 +264,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114111441869251096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,6 +280,8 @@ MonoBehaviour:
     type: 2}
   enemySlider: {fileID: 114269210855655320}
   enemyMaxHealth: 50
+  drops: 1
+  theDrop: {fileID: 1750393037026702, guid: 5b23257e98ba54920a45cb92874b0e72, type: 2}
 --- !u!114 &114229031020727512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  damageRate: 0.5
+  damageRate: 1
 --- !u!114 &114255922846510334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -492,6 +495,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:

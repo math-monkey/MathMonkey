@@ -365,17 +365,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114111441869251096, guid: dd3143433f2ae45d89e4dc4ed9d1ac1a,
-        type: 2}
-      propertyPath: drops
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114111441869251096, guid: dd3143433f2ae45d89e4dc4ed9d1ac1a,
-        type: 2}
-      propertyPath: theDrop
-      value: 
-      objectReference: {fileID: 1260653467148920, guid: 5b23257e98ba54920a45cb92874b0e72,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd3143433f2ae45d89e4dc4ed9d1ac1a, type: 2}
   m_IsPrefabParent: 0
@@ -467,7 +456,7 @@ RectTransform:
   - {fileID: 362928913}
   - {fileID: 1710980137}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -973,9 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994bde1b95492411f8eb1a50a96e1fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLife1: {fileID: 0}
-  playerLife2: {fileID: 0}
-  playerLife3: {fileID: 0}
+  playerLives: []
   playerUI: {fileID: 362928913}
   gameOverUI: {fileID: 1710980137}
   healthSlider: {fileID: 1859839336}
@@ -1209,17 +1196,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 114217179522811442, guid: e253caa364d2d4186bc21b5d7d3333ea,
-        type: 2}
-      propertyPath: drops
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114217179522811442, guid: e253caa364d2d4186bc21b5d7d3333ea,
-        type: 2}
-      propertyPath: theDrop
-      value: 
-      objectReference: {fileID: 1260653467148920, guid: 5b23257e98ba54920a45cb92874b0e72,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e253caa364d2d4186bc21b5d7d3333ea, type: 2}
   m_IsPrefabParent: 0
@@ -2177,7 +2153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09fd615a0472e45948f2fc170342b6f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullHealth: 20
+  fullHealth: 50
   pushBackForce: 20
   healthSlider: {fileID: 1859839336}
 --- !u!114 &1988469837
@@ -2191,9 +2167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994bde1b95492411f8eb1a50a96e1fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLife1: {fileID: 1111094427}
-  playerLife2: {fileID: 2027871463}
-  playerLife3: {fileID: 623494960}
+  playerLives:
+  - {fileID: 1111094427}
+  - {fileID: 2027871463}
+  - {fileID: 623494960}
   playerUI: {fileID: 362928913}
   gameOverUI: {fileID: 1710980137}
   healthSlider: {fileID: 1859839336}
@@ -2273,7 +2250,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.80000234, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2027871461
 GameObject:

@@ -208,6 +208,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114170392904844180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,6 +238,8 @@ MonoBehaviour:
     type: 2}
   enemySlider: {fileID: 114476520786943896}
   enemyMaxHealth: 50
+  drops: 1
+  theDrop: {fileID: 1750393037026702, guid: 5b23257e98ba54920a45cb92874b0e72, type: 2}
 --- !u!114 &114249029781105948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -420,6 +423,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:

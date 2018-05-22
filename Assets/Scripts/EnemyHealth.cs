@@ -35,10 +35,20 @@ public class EnemyHealth : MonoBehaviour {
 			MakeDead();
 		}
 	}
+    
+	void DropCoins(int numberOfCoins) {
+		Vector3 temp = new Vector3(transform.position.x - 0.5f, transform.position.y - 0.5f, transform.position.z);
+        transform.position = temp;
+		for (int i = 0; i < numberOfCoins; i++) {
+			Instantiate(theDrop, transform.position, transform.rotation);
+            temp.x = transform.position.x + 0.5f;
+            transform.position = temp;
+		}
+    }
 
-	private void MakeDead() {
-		Destroy(gameObject);
-		Instantiate(enemyDeathFX, transform.position, transform.rotation);
-		if (drops) Instantiate(theDrop, transform.position, transform.rotation);
+    private void MakeDead() {
+        Destroy(gameObject);
+        Instantiate(enemyDeathFX, transform.position, transform.rotation);
+		if (drops) DropCoins(5);
 	}
 }
