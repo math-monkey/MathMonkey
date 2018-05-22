@@ -55,6 +55,7 @@ public class PlayerLife : MonoBehaviour {
 	}
 
 	public void goToMainMenu() {
+		PlayerScore.playerScore = 0;
 		PlayerLife.lives = 0;
 		PlayerLife.countLives = 0;
 		SceneManager.LoadScene("MainMenu");

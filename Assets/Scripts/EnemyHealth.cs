@@ -9,6 +9,9 @@ public class EnemyHealth : MonoBehaviour {
 	public GameObject enemyDeathFX;
 	public Slider enemySlider;
 	public float enemyMaxHealth;
+	public bool drops;
+	public GameObject theDrop;
+
 	float currentHealth;
 	NumberController nc;
 
@@ -36,5 +39,6 @@ public class EnemyHealth : MonoBehaviour {
 	private void MakeDead() {
 		Destroy(gameObject);
 		Instantiate(enemyDeathFX, transform.position, transform.rotation);
+		if (drops) Instantiate(theDrop, transform.position, transform.rotation);
 	}
 }
