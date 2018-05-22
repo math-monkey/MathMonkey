@@ -23,10 +23,14 @@ public class PlayerHealth : MonoBehaviour {
 		myAnim = controlMovement.GetComponent<Animator>();
 		capsuleCollider = GetComponent<CapsuleCollider2D>();
 		playerLife = GetComponent<PlayerLife>();
-
+        
 		//HUD Initialization
 		healthSlider.maxValue = fullHealth;
 		healthSlider.value = fullHealth;
+
+		transform.gameObject.SetActive(true);
+		playerLife.gameOverUI.gameObject.SetActive(false);
+		playerLife.playerUI.gameObject.SetActive(true);
 	}
 	
 	// Update is called once per frame
@@ -56,13 +60,12 @@ public class PlayerHealth : MonoBehaviour {
 	public void Death() {
 		StartCoroutine("MakeDead");
 	}
-
+    
 
 	void decrementLives() {
 		if (PlayerLife.lives == 0) PlayerLife.lives = 3;
 		PlayerLife.countLives++;
         PlayerLife.lives--;
-        Debug.Log(PlayerLife.lives);
 	}
 
 
@@ -72,12 +75,13 @@ public class PlayerHealth : MonoBehaviour {
         controlMovement.enabled = false;
 	}
     
-    IEnumerator MakeDead() {
-		decrementLives();
-		disableObjects();
+	IEnumerator MakeDead() {
 		PushBack();
-        myAnim.SetTrigger("Die");
+		myAnim.SetTrigger("Die");
+        decrementLives();
+        disableObjects();
 		yield return new WaitForSeconds(1.5f);
 		SceneManager.LoadScene("Main");
+       
 	}
 }
