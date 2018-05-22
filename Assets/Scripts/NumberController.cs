@@ -9,12 +9,16 @@ public class NumberController : MonoBehaviour {
 	int enemyNumber;
 
 	void Start() {
-		int idx = Random.Range(0, NumberHelper.availableNumbers.Length);
-		enemyNumber = NumberHelper.availableNumbers[idx];
-		enemyNumberUI.text = enemyNumber.ToString();
+		UpdateNumber();
 	}
 
 	public int GetNumber() {
 		return enemyNumber;
+	}
+
+	public void UpdateNumber() {
+		int idx = Random.Range(0, NumberHelper.availableNumbers.Length);
+		enemyNumber = NumberHelper.availableNumbers[idx];
+		enemyNumberUI.text = enemyNumber.ToString();
 	}
 }

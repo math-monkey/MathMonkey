@@ -2,7 +2,7 @@
 public class NumberHelper {
 
 	public static readonly int[] availableNumbers = new int[] {
-		4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29
+		4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 26, 27, 28, 29, 31
 	};
 
 	public static bool IsEven(int number) {
