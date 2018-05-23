@@ -41,6 +41,7 @@ public class GameMenu : MonoBehaviour {
     }
 
     public void GoToMainMenu() {
+        Time.timeScale = 1.0f;
         PlayerScore.playerScore = 0;
         PlayerLife.lives = 0;
         PlayerLife.countLives = 0;
