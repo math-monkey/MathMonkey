@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
     public AudioClip jumpAudio;
 
 	Rigidbody2D myRB;
-	Animator myAnim;
+    public Animator myAnim { get; set; }
 	bool facingRight;
 
 	// Projectile throwing Variables

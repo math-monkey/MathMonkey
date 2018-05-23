@@ -9,6 +9,7 @@ public class PlayerLife : MonoBehaviour {
     //player life
 	public Image[] playerLives;
 	public RectTransform playerUI;
+    public RectTransform scoreUI;
 	public RectTransform gameOverUI;
     public Slider healthSlider;
     public AudioSource gameAudio;
@@ -57,6 +58,7 @@ public class PlayerLife : MonoBehaviour {
         AudioSource.PlayClipAtPoint(gameoverAudio, transform.position, 1f);
         transform.gameObject.SetActive(false);
         playerUI.gameObject.SetActive(false);
+        scoreUI.gameObject.SetActive(false);
         gameOverUI.gameObject.SetActive(true);
 	}
 }

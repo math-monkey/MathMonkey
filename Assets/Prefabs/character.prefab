@@ -221,6 +221,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   playerUI: {fileID: 0}
+  scoreUI: {fileID: 0}
   gameOverUI: {fileID: 0}
   healthSlider: {fileID: 0}
   gameAudio: {fileID: 0}
