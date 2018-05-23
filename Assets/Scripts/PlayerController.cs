@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 public class PlayerController : MonoBehaviour {
 
@@ -14,10 +13,10 @@ public class PlayerController : MonoBehaviour {
 	public LayerMask groundLayer;
 	public Transform groundCheck;
 	public float jumpHeight = 15f;
-    public AudioClip jumpAudio;
+	public AudioClip jumpAudio;
 
 	Rigidbody2D myRB;
-    public Animator myAnim { get; set; }
+	public Animator myAnim { get; set; }
 	bool facingRight;
 
 	// Projectile throwing Variables
@@ -40,7 +39,7 @@ public class PlayerController : MonoBehaviour {
 			grounded = false;
 			myAnim.SetBool("isGrounded", grounded);
 			myRB.velocity = Vector2.up * jumpHeight;
-            AudioSource.PlayClipAtPoint(jumpAudio, transform.position, 1f);
+			AudioSource.PlayClipAtPoint(jumpAudio, transform.position, 1f);
 		}
 
 		// Player shooting
