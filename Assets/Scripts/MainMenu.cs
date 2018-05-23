@@ -5,24 +5,26 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
-    
-	public GameObject mainMenuObj;
-	public GameObject optionsMenuObj;
+
+    public GameObject mainMenuObj;
+    public GameObject optionsMenuObj;
 
 	public void PlayGame() {
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+		SceneManager.LoadScene("Main");
 	}
 
-	public void QuitGame() {
-		Application.Quit();
-		Debug.Log("Quit");
-	}
+    public void QuitGame() {
+        Application.Quit();
+        Debug.Log("Quit");
+    }
     
-	public void OptionsMenu() {
-		SceneManager.LoadScene("OptionsMenu");
-	}
+    public void OptionsMenu() {
+        mainMenuObj.SetActive(false);
+        optionsMenuObj.SetActive(true);
+    }
 
-	public void Back() {
-		SceneManager.LoadScene("MainMenu");
-	}
+    public void Back() {
+        optionsMenuObj.SetActive(false);
+        mainMenuObj.SetActive(true);
+    }
 }

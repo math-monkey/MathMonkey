@@ -52,7 +52,7 @@ public class PlayerLife : MonoBehaviour {
 		gameOverUI.gameObject.SetActive(true);
 	}
 
-	public void goToMainMenu() {
+	public void GoToMainMenu() {
 		PlayerScore.playerScore = 0;
 		PlayerLife.lives = 0;
 		PlayerLife.countLives = 0;

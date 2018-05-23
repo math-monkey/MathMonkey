@@ -1,0 +1,47 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class GameMenu : MonoBehaviour {
+
+    public GameObject playerUI;
+    public GameObject pauseUI;
+
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+    public void PauseGame() {
+        Time.timeScale = 0;
+        playerUI.SetActive(false);
+        pauseUI.SetActive(true);
+    }
+
+    public void ResumeGame() {
+        Time.timeScale = 1.0f;
+        pauseUI.SetActive(false);
+        playerUI.SetActive(true);
+    }
+
+    public void RestartGame() {
+        Time.timeScale = 1.0f;
+        PlayerScore.playerScore = 0;
+        PlayerLife.lives = 0;
+        PlayerLife.countLives = 0;
+        SceneManager.LoadScene("Main");
+    }
+
+    public void GoToMainMenu() {
+        PlayerScore.playerScore = 0;
+        PlayerLife.lives = 0;
+        PlayerLife.countLives = 0;
+        SceneManager.LoadScene("MainMenu");
+    }
+}
