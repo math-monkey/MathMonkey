@@ -39,6 +39,9 @@ GameObject:
   - component: {fileID: 50710047225293044}
   - component: {fileID: 70464933277351364}
   - component: {fileID: 114300729653937532}
+  - component: {fileID: 114169897199357316}
+  - component: {fileID: 114674788246145536}
+  - component: {fileID: 114340056040349560}
   m_Layer: 0
   m_Name: character
   m_TagString: Player
@@ -55,7 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4144427728336634}
   m_Layer: 0
-  m_Name: bananaThrower
+  m_Name: bananaSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 4660412927644837186, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -94,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1770450897468590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -9.02, y: -4.73, z: 0}
   m_LocalScale: {x: 0.8680058, y: 0.86800575, z: 0.86800575}
   m_Children:
   - {fileID: 4171555201021038}
@@ -154,6 +157,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114169897199357316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1770450897468590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09fd615a0472e45948f2fc170342b6f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullHealth: 50
+  pushBackForce: 20
+  healthSlider: {fileID: 0}
+  monkeyAudio: {fileID: 8300000, guid: ba590cb4c838f4400ac6c619b8dd0d39, type: 3}
 --- !u!114 &114300729653937532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,8 +190,41 @@ MonoBehaviour:
     m_Bits: 256
   groundCheck: {fileID: 4171555201021038}
   jumpHeight: 17
-  projectileThrower: {fileID: 4144427728336634}
-  projectile: {fileID: 1309096941887346, guid: ff5a74a096d154580a36fb4754cea955, type: 2}
+  jumpAudio: {fileID: 8300000, guid: 9a6e30e4647424523866d84299ff1285, type: 3}
+  bulletSpawn: {fileID: 4144427728336634}
+  bullet: {fileID: 1309096941887346, guid: ff5a74a096d154580a36fb4754cea955, type: 2}
+--- !u!114 &114340056040349560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1770450897468590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2bdd57816cd4e478d7dc2ae6503f84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+--- !u!114 &114674788246145536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1770450897468590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 994bde1b95492411f8eb1a50a96e1fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLives:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerUI: {fileID: 0}
+  gameOverUI: {fileID: 0}
+  healthSlider: {fileID: 0}
+  gameAudio: {fileID: 0}
+  gameoverAudio: {fileID: 8300000, guid: 32fc6aee9cdee483cb794a1927d1d4c8, type: 3}
 --- !u!212 &212282807323350466
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -186,6 +238,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:

@@ -19,12 +19,14 @@ public class GameMenu : MonoBehaviour {
 	}
 
     public void PauseGame() {
+        PlayerLife.mainAudio.Pause();
         Time.timeScale = 0;
         playerUI.SetActive(false);
         pauseUI.SetActive(true);
     }
 
     public void ResumeGame() {
+        PlayerLife.mainAudio.Play();
         Time.timeScale = 1.0f;
         pauseUI.SetActive(false);
         playerUI.SetActive(true);

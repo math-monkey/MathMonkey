@@ -154,6 +154,7 @@ MonoBehaviour:
   spEven: {fileID: 21300000, guid: ac9078810d1754a08b1c30eb933270cb, type: 3}
   spDiv3: {fileID: 21300000, guid: ab383bff4dd684796ae2135a3c58c2d5, type: 3}
   spPrime: {fileID: 21300000, guid: 5b59eba58c54c4129812e29a3eb0da5e, type: 3}
+  throwAudio: {fileID: 8300000, guid: c088e070774494a0b91e9e9fbf333537, type: 3}
 --- !u!114 &114472448539953522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -215,7 +216,7 @@ SpriteRenderer:
   m_SortingLayerID: 131647143
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5b59eba58c54c4129812e29a3eb0da5e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab383bff4dd684796ae2135a3c58c2d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

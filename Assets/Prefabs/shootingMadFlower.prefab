@@ -264,6 +264,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114111441869251096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -278,9 +279,10 @@ MonoBehaviour:
   enemyDeathFX: {fileID: 1976247989307848, guid: dd9f627558d6e49da887f043077e60c5,
     type: 2}
   enemySlider: {fileID: 114269210855655320}
+  theDrop: {fileID: 1750393037026702, guid: 5b23257e98ba54920a45cb92874b0e72, type: 2}
+  audioDeath: {fileID: 8300000, guid: 418201ec0b5b14a429f1b105a693e364, type: 3}
   enemyMaxHealth: 50
   drops: 1
-  theDrop: {fileID: 1750393037026702, guid: 5b23257e98ba54920a45cb92874b0e72, type: 2}
 --- !u!114 &114229031020727512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -494,6 +496,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:

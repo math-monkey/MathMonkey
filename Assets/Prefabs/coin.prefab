@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58f60e4ffbeb484aa4149d335c6f1b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinAudio: {fileID: 8300000, guid: f6d327f0c9dd2421b8aefff2552143d6, type: 3}
 --- !u!212 &212981377605544592
 SpriteRenderer:
   m_ObjectHideFlags: 1

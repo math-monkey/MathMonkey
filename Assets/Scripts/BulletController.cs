@@ -9,7 +9,8 @@ public class BulletController : MonoBehaviour {
 	public Sprite spEven;
 	public Sprite spDiv3;
 	public Sprite spPrime;
-	public BulletType bulletType { get; set; }
+    public BulletType bulletType { get; set; }
+    public AudioClip throwAudio;
 
 	public enum BulletType {
 		EVEN, DIVISIBLE_3, PRIME,
@@ -31,6 +32,7 @@ public class BulletController : MonoBehaviour {
 		SetType(banana.GetComponent<SpriteRenderer>().sprite);
 
 		rb.AddForce(direction * bulletSpeed, ForceMode2D.Impulse);
+        AudioSource.PlayClipAtPoint(throwAudio, transform.position, 1f);
 	}
 
 	// Update is called once per frame

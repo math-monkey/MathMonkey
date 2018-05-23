@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour {
 	public float fullHealth;
 	public float pushBackForce;
 	public Slider healthSlider;
+    public AudioClip monkeyAudio;
 
     float currentHealth;
     PlayerController controlMovement;
@@ -76,8 +77,9 @@ public class PlayerHealth : MonoBehaviour {
 	}
     
 	IEnumerator MakeDead() {
-		PushBack();
-		myAnim.SetTrigger("Die");
+        PushBack();
+        myAnim.SetTrigger("Die");
+        AudioSource.PlayClipAtPoint(monkeyAudio, transform.position, 1f);
         decrementLives();
         disableObjects();
 		yield return new WaitForSeconds(1.5f);

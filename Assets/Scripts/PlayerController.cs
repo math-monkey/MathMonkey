@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
 	public LayerMask groundLayer;
 	public Transform groundCheck;
 	public float jumpHeight = 15f;
+    public AudioClip jumpAudio;
 
 	Rigidbody2D myRB;
 	Animator myAnim;
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour {
 			grounded = false;
 			myAnim.SetBool("isGrounded", grounded);
 			myRB.velocity = Vector2.up * jumpHeight;
+            AudioSource.PlayClipAtPoint(jumpAudio, transform.position, 1f);
 		}
 
 		// Player shooting

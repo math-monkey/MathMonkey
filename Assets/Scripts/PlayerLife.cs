@@ -11,12 +11,18 @@ public class PlayerLife : MonoBehaviour {
 	public RectTransform playerUI;
 	public RectTransform gameOverUI;
     public Slider healthSlider;
+    public AudioSource gameAudio;
+    public static AudioSource mainAudio;
+    public AudioClip gameoverAudio;
 
     public static int lives;
     public static int countLives;
 
     // Use this for initialization
     void Start () {
+        PlayerLife.mainAudio = gameAudio;
+        PlayerLife.mainAudio.loop = true;
+        PlayerLife.mainAudio.Play();
 		if (PlayerLife.countLives != 0) {
            checkLife();
         }
@@ -47,8 +53,10 @@ public class PlayerLife : MonoBehaviour {
     }
 
 	void gameOver() {
-		transform.gameObject.SetActive(false);
-		playerUI.gameObject.SetActive(false);
-		gameOverUI.gameObject.SetActive(true);
+        PlayerLife.mainAudio.Stop();
+        AudioSource.PlayClipAtPoint(gameoverAudio, transform.position, 1f);
+        transform.gameObject.SetActive(false);
+        playerUI.gameObject.SetActive(false);
+        gameOverUI.gameObject.SetActive(true);
 	}
 }
