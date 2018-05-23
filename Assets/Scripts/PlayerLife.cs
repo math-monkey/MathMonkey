@@ -51,11 +51,4 @@ public class PlayerLife : MonoBehaviour {
 		playerUI.gameObject.SetActive(false);
 		gameOverUI.gameObject.SetActive(true);
 	}
-
-	public void GoToMainMenu() {
-		PlayerScore.playerScore = 0;
-		PlayerLife.lives = 0;
-		PlayerLife.countLives = 0;
-		SceneManager.LoadScene("MainMenu");
-    }
 }
