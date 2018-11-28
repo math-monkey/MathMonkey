@@ -83,7 +83,6 @@ public class PlayerHealth : MonoBehaviour {
         decrementLives();
         disableObjects();
 		yield return new WaitForSeconds(1.5f);
-		SceneManager.LoadScene("Main");
-       
-	}
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
