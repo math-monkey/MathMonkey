@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 70084093786734682}
   - component: {fileID: 114486965162252376}
   - component: {fileID: 114674755498259930}
-  - component: {fileID: 114907005559767488}
   m_Layer: 9
   m_Name: madFlowerTriangle
   m_TagString: Enemy
@@ -407,18 +406,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114907005559767488
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1981573429370466}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e38765e3be24e4e19b4d5fee34e743a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyNumberUI: {fileID: 0}
 --- !u!114 &114962071249465074
 MonoBehaviour:
   m_ObjectHideFlags: 1

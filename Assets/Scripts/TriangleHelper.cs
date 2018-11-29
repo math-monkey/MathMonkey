@@ -1,16 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
-public class TriangleHelper : MonoBehaviour {
+public class TriangleHelper {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public static readonly int[] availableTriangles = new int[] {1,2,3};
+
+    //public static bool HasDamage(BulletController.BulletType bulletType, int number) {
+    //    switch (bulletType)
+    //    {
+    //        case BulletController.BulletType.EVEN:
+    //            return IsEven(number);
+    //        case BulletController.BulletType.DIVISIBLE_3:
+    //            return IsDivisible3(number);
+    //        case BulletController.BulletType.PRIME:
+    //            return IsPrime(number);
+    //        default:
+    //            return false;
+    //    }
+    //}
 }
