@@ -16,10 +16,8 @@ public class MeshGenerator : MonoBehaviour {
     public static readonly Color[] availableTriangles = new Color[] {
      new Color(0.89f, 0.52f, 0.46f), new Color(0.2f,0.4f,0.8f), new Color(0.57f, 0.23f, 0.74f) };
 
-    // Use this for initialization
     void Start() {
-        mesh = new Mesh();
-        vertices = new Vector3[3];
+        CreateTriangle();
     }
 
     public void SetValues(float v1, float v2) {
@@ -29,6 +27,9 @@ public class MeshGenerator : MonoBehaviour {
     }
 
     void CreateTriangle() {
+        mesh = new Mesh();
+        vertices = new Vector3[3];
+
         if (!isBorder) {
             DefineVerticesTriangle();
             DefineColors();
@@ -39,6 +40,7 @@ public class MeshGenerator : MonoBehaviour {
         mesh.triangles = new int[] { 0, 1, 2 };
 
         GetComponent<MeshRenderer>().material = mat;
+        GetComponent<MeshRenderer>().material.color = triangleColor;
         GetComponent<MeshFilter>().mesh = mesh;
     }
 
@@ -57,6 +59,5 @@ public class MeshGenerator : MonoBehaviour {
     void DefineColors() {
         int colorIndex = Random.Range(0, availableTriangles.Length);
         triangleColor = availableTriangles[colorIndex];
-        mat.color = triangleColor;
     }
 }
