@@ -5,7 +5,9 @@ using UnityEngine;
 public class TriangleController : MonoBehaviour {
 
     public GameObject triangleObject;
-    MeshGenerator meshGenerator;
+    public GameObject triangleObjectBorder;
+    MeshGenerator meshGeneratorTriangle;
+    MeshGenerator meshGeneratorBorder;
     int enemyTriangle;
 
     void Start() {
@@ -19,20 +21,24 @@ public class TriangleController : MonoBehaviour {
     public void UpdateTriangle() {
         int idx = Random.Range(0, TriangleHelper.availableTriangles.Length);
         enemyTriangle = TriangleHelper.availableTriangles[idx];
-        meshGenerator = triangleObject.GetComponent<MeshGenerator>();
+        meshGeneratorTriangle = triangleObject.GetComponent<MeshGenerator>();
+        meshGeneratorBorder = triangleObjectBorder.GetComponent<MeshGenerator>();
         SetTriangle();
     }
 
     public void SetTriangle() {
         switch (enemyTriangle) {
             case 1:
-                meshGenerator.SetValues(2, 1); //Equilateral Triangle
+                meshGeneratorTriangle.SetValues(2, 1); //Equilateral Triangle
+                meshGeneratorBorder.SetValues(2.2f, 1.2f);
                 break;
             case 2:
-                meshGenerator.SetValues(4, 1); //Isosceles Triangle
+                meshGeneratorTriangle.SetValues(4, 1); //Isosceles Triangle
+                meshGeneratorBorder.SetValues(4.2f, 1.2f);
                 break;
             case 3:
-                meshGenerator.SetValues(2, 3); //Scalene Triangle
+                meshGeneratorTriangle.SetValues(2, 3); //Scalene Triangle
+                meshGeneratorBorder.SetValues(2.2f, 3.5f);
                 break;
             default:
                 break;
