@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 70084093786734682}
   - component: {fileID: 114486965162252376}
   - component: {fileID: 114674755498259930}
+  - component: {fileID: 114168235099498826}
   m_Layer: 9
   m_Name: madFlowerTriangle
   m_TagString: Enemy
@@ -139,7 +140,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1981573429370466}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -16.56, y: -4.07, z: 0}
+  m_LocalPosition: {x: -15.51, y: -4.07, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 4334859029828672}
@@ -168,10 +169,10 @@ Transform:
   m_GameObject: {fileID: 1701457744052762}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.28933528, y: 0.28933525, z: 0.86800575}
+  m_LocalScale: {x: 0.2893353, y: 0.28933525, z: 0.86800575}
   m_Children: []
   m_Father: {fileID: 224479491804832152}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23156204654880454
 MeshRenderer:
@@ -279,6 +280,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114168235099498826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1981573429370466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac902a732c8b84923b92c432162fc4a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triangleObject: {fileID: 1701457744052762}
 --- !u!114 &114324287928572110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -520,8 +533,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 224677028536582930}
   - {fileID: 4906040713635458}
+  - {fileID: 224677028536582930}
   m_Father: {fileID: 4322287904760098}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -560,7 +573,7 @@ RectTransform:
   m_Children:
   - {fileID: 224274805284886496}
   m_Father: {fileID: 224479491804832152}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
