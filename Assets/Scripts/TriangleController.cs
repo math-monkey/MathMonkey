@@ -28,15 +28,15 @@ public class TriangleController : ObjectController {
 
     public void SetTriangle() {
         switch (enemyTriangle) {
-            case 1:
+            case 0:
                 meshGeneratorTriangle.SetValues(2, 1); //Equilateral Triangle
                 meshGeneratorBorder.SetValues(2.2f, 1.2f);
                 break;
-            case 2:
+            case 1:
                 meshGeneratorTriangle.SetValues(4, 1); //Isosceles Triangle
                 meshGeneratorBorder.SetValues(4.2f, 1.2f);
                 break;
-            case 3:
+            case 2:
                 meshGeneratorTriangle.SetValues(2, 3); //Scalene Triangle
                 meshGeneratorBorder.SetValues(2.2f, 3.5f);
                 break;
