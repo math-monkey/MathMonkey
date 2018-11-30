@@ -12,7 +12,6 @@ public class EnemyHealth : MonoBehaviour {
     public AudioClip audioDeath;
     public float enemyMaxHealth;
     public bool drops;
-    public bool isNumber;
 
     float currentHealth;
     bool onlyRightShots;
@@ -28,8 +27,8 @@ public class EnemyHealth : MonoBehaviour {
     }
 
     public void AddDamage(float damage, BulletController.BulletType bulletType) {
-        Debug.Log(controller.GetNumber());
-        if (!NumberHelper.HasDamage(bulletType, controller.GetNumber())) {
+        bool condition = DefineTypeCondition(bulletType);
+        if (condition) {
             damage *= -1;
             onlyRightShots = false;
         }
@@ -41,6 +40,11 @@ public class EnemyHealth : MonoBehaviour {
         } else {
             controller.UpdateValue();
         }
+    }
+
+    bool DefineTypeCondition(BulletController.BulletType bulletType) {
+        if (controller is NumberController) return !NumberHelper.HasDamage(bulletType, controller.GetNumber());
+        else return !TriangleHelper.HasDamage(bulletType, controller.GetNumber());
     }
 
     void DropCoins(int numberOfCoins) {
