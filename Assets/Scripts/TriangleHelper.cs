@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class TriangleHelper {
+public class TriangleHelper: ObjectHelper{
 
     public static readonly int[] availableTriangles = new int[] {1,2,3};
 

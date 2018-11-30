@@ -12,14 +12,15 @@ public class EnemyHealth : MonoBehaviour {
     public AudioClip audioDeath;
     public float enemyMaxHealth;
     public bool drops;
+    public bool isNumber;
 
     float currentHealth;
-    NumberController nc;
     bool onlyRightShots;
+    ObjectController controller;
 
     // Use this for initialization
     void Start() {
-        nc = GetComponent<NumberController>();
+        controller = GetComponent<ObjectController>();
         currentHealth = enemyMaxHealth;
         enemySlider.maxValue = enemyMaxHealth;
         enemySlider.value = currentHealth;
@@ -27,8 +28,8 @@ public class EnemyHealth : MonoBehaviour {
     }
 
     public void AddDamage(float damage, BulletController.BulletType bulletType) {
-        if (!NumberHelper.HasDamage(bulletType, nc.GetNumber())) {
-            // Make any penalty here
+        Debug.Log(controller.GetNumber());
+        if (!NumberHelper.HasDamage(bulletType, controller.GetNumber())) {
             damage *= -1;
             onlyRightShots = false;
         }
@@ -38,7 +39,7 @@ public class EnemyHealth : MonoBehaviour {
         if (currentHealth <= 0) {
             MakeDead();
         } else {
-            nc.UpdateNumber();
+            controller.UpdateValue();
         }
     }
 

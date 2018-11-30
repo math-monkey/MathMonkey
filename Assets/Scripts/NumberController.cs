@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NumberController : MonoBehaviour {
+public class NumberController : ObjectController {
 
 	public Text enemyNumberUI;
 	int enemyNumber;
 
 	void Start() {
-		UpdateNumber();
+        UpdateValue();
 	}
 
-	public int GetNumber() {
+	public override int GetNumber() {
 		return enemyNumber;
 	}
 
-	public void UpdateNumber() {
+	public override void UpdateValue() {
 		int idx = Random.Range(0, NumberHelper.availableNumbers.Length);
 		enemyNumber = NumberHelper.availableNumbers[idx];
 		enemyNumberUI.text = enemyNumber.ToString();

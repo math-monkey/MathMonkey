@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriangleController : MonoBehaviour {
+public class TriangleController : ObjectController {
 
     public GameObject triangleObject;
     public GameObject triangleObjectBorder;
@@ -11,14 +11,14 @@ public class TriangleController : MonoBehaviour {
     int enemyTriangle;
 
     void Start() {
-        UpdateTriangle();
+        UpdateValue();
     }
 
-    public int GetNumber() {
+    public override int GetNumber() {
         return enemyTriangle;
     }
 
-    public void UpdateTriangle() {
+    public override void UpdateValue() {
         int idx = Random.Range(0, TriangleHelper.availableTriangles.Length);
         enemyTriangle = TriangleHelper.availableTriangles[idx];
         meshGeneratorTriangle = triangleObject.GetComponent<MeshGenerator>();
