@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour {
 	public GameObject mainMenuObj;
 	public GameObject optionsMenuObj;
 	public GameObject instructionsMenuObj;
+    public GameObject nameCanvasUI;
+    public Input playerName;
 
     private void Start() {
         if (!PlayerPrefs.HasKey("score1")) {
@@ -19,10 +21,17 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void PlayGame() {
+        PlayerPrefs.SetString("playerName", playerName.ToString());
 		SceneManager.LoadScene("Level 1");
 	}
 
-	public void QuitGame() {
+    public void EnterName() {
+        instructionsMenuObj.SetActive(false);
+        mainMenuObj.SetActive(false);
+        nameCanvasUI.SetActive(true);
+    }
+
+    public void QuitGame() {
 		Application.Quit();
 		Debug.Log("Quit");
 	}
