@@ -10,7 +10,15 @@ public class MainMenu : MonoBehaviour {
 	public GameObject optionsMenuObj;
 	public GameObject instructionsMenuObj;
 
-	public void PlayGame() {
+    private void Start() {
+        if (!PlayerPrefs.HasKey("score1")) {
+            PlayerPrefs.SetInt("score1", 0);
+            PlayerPrefs.SetInt("score2", 0);
+            PlayerPrefs.SetInt("score3", 0);
+        }
+    }
+
+    public void PlayGame() {
 		SceneManager.LoadScene("Level 1");
 	}
 

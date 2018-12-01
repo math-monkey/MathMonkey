@@ -11,13 +11,13 @@ public class PlayerScore : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
-		PlayerScore.playerScore = 0;
+        PlayerScore.playerScore = 0;
 		if (scoreText != null) {
 			scoreText.text = PlayerScore.playerScore.ToString();
 		}
 	}
 
-	public void AddScore(int score) {
+    public void AddScore(int score) {
 		PlayerScore.playerScore += score;
 		scoreText.text = PlayerScore.playerScore.ToString();
 	}

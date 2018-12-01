@@ -14,20 +14,20 @@ public class WInGame : MonoBehaviour {
 	void Start () {
         playerController = character.GetComponent<PlayerController>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
             StartCoroutine("WalkAway");
-
         }
     }
 
     IEnumerator WalkAway() {
+        ScoreController.AppendScore();
         playerController.myAnim.SetTrigger("Win");
         yield return new WaitForSeconds(1.5f);
         character.gameObject.SetActive(false);
