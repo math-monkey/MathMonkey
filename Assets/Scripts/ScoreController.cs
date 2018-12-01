@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ScoreController : MonoBehaviour {
 
-    public GameObject scoreUI;
+    public GameObject scoreBoardUI;
+    public GameObject winGameUI;
 
     public static void AppendScore() {
         int score1 = PlayerPrefs.GetInt("score1");
@@ -21,9 +22,15 @@ public class ScoreController : MonoBehaviour {
         } else if (PlayerScore.playerScore > PlayerPrefs.GetInt("score3")) {
             PlayerPrefs.SetInt("score3", PlayerScore.playerScore);
         }
+    }
 
-        Debug.Log("score1 = " + PlayerPrefs.GetInt("score1"));
-        Debug.Log("score2 = " + PlayerPrefs.GetInt("score2"));
-        Debug.Log("score3 = " + PlayerPrefs.GetInt("score3"));
+    public void ShowScoreBoard() {
+        winGameUI.SetActive(false);
+        scoreBoardUI.SetActive(true);
+    }
+
+    public void BackToWinGameUI() {
+        scoreBoardUI.SetActive(false);
+        winGameUI.SetActive(true);
     }
 }
