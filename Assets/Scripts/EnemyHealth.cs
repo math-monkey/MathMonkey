@@ -16,6 +16,7 @@ public class EnemyHealth : MonoBehaviour {
     float currentHealth;
     bool onlyRightShots;
     ObjectController controller;
+    public FeedbackMessage feedbackMessage;
 
     // Use this for initialization
     void Start() {
@@ -31,6 +32,7 @@ public class EnemyHealth : MonoBehaviour {
         if (condition) {
             damage *= -1;
             onlyRightShots = false;
+            feedbackMessage.ShowMessage();
         }
         currentHealth = Math.Min(currentHealth - damage, enemyMaxHealth);
         enemySlider.gameObject.SetActive(true);
